@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+
+template <typename T>
+T min(T a, T b){
+	return (a<b) ? a:b;
+}
+
+template <typename T1, typename T2>
+void func(T1 a,T2 b){
+	std::cout << a<<" "<<b<<std::endl;
+}
+
+template <typename T>
+void my_swap(T &a,T &b){
+	T temp = a;
+	a = b;
+	b = temp;
+}
+
+int main()
+{
+	int x=100;
+	int y=200;
+	my_swap(x,y);
+	std::cout << min<int>(2,3)<<std::endl;
+	std::cout << min(12.4,3.5) <<std::endl;
+	std::cout<< min('A','B')<<std::endl;
+	std::cout<<min(5+2*2,7+40)<<std::endl;
+	func<int,int>(10,20);
+	func('A',12.4);
+	return 0;
+
+}
